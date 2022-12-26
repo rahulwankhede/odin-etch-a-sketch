@@ -10,7 +10,6 @@ for(let i = 0; i < gridSize; i++){
 		div.setAttribute("class", "box");
 		const id = i*gridSize + j + 1;
 		div.setAttribute("id", `${id}`)
-		div.innerText = id;
 		container.appendChild(div);
 	}
 }
