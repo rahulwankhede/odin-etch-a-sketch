@@ -1,21 +1,31 @@
 const container = document.querySelector(".container");
 
-const gridSize = 16;
+function drawGrid(size){
+	let div, id;
 
-let div, id;
-
-for(let i = 0; i < gridSize; i++){
-	for(let j = 0; j < gridSize; j++){
-		div = document.createElement('div');
-		div.setAttribute("class", "box");
-		id = i*gridSize + j + 1;
-		div.setAttribute("id", `${id}`)
-		container.appendChild(div);
-		div.addEventListener('mouseover', function(e){
-			this.classList.add("hover");
-		});
-		div.addEventListener('mouseout', function(e){
-			this.classList.remove("hover");
-		});
+	for(let i = 0; i < size; i++){
+		for(let j = 0; j < size; j++){
+			div = document.createElement('div');
+			div.setAttribute("class", "box");
+			id = i*size + j + 1;
+			div.setAttribute("id", `${id}`)
+			container.appendChild(div);
+			div.addEventListener('mouseover', function(e){
+				this.classList.add("hover");
+			});
+			div.addEventListener('mouseout', function(e){
+				this.classList.remove("hover");
+			});
+		}
 	}
 }
+
+let gridSize = 16;
+drawGrid(gridSize);
+
+function getGridSize(){
+	return parseInt(prompt("Input new grid size not greater than 100"));
+}
+
+const button = document.querySelector('button');
+button.addEventListener('click', getGridSize);
