@@ -1,15 +1,27 @@
+.placeholder{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 .container{
 	display: grid;
 	grid-template-columns: repeat(16, 1fr);
 	width: 600px;
 	height: 600px;
 	border: 1px solid black;
+	margin: auto;
 }
 
 .box{
 	border: 1px solid lightgrey;
 	background-color: white;
 	aspect-ratio: 1;
+}
+
+button{
+	margin: 10px;
+	height: 50px;
+	width: 100px;
 }
 
 .hover{
