@@ -1,5 +1,9 @@
 const container = document.querySelector(".container");
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
 function drawGrid(size){
 	let div, id;
 	container.style.gridTemplateColumns = `repeat(${size}, 1fr)`
@@ -11,7 +15,7 @@ function drawGrid(size){
 			div.setAttribute("id", `${id}`);
 			container.appendChild(div);
 			div.addEventListener('mouseover', function(e){
-				this.classList.add("hover");
+				this.style.backgroundColor = `rgb(${getRandomInt(256)}, ${getRandomInt(256)}, ${getRandomInt(256)})`;
 			});
 		}
 	}
