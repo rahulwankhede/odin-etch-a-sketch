@@ -13,9 +13,6 @@ function drawGrid(size){
 			div.addEventListener('mouseover', function(e){
 				this.classList.add("hover");
 			});
-			div.addEventListener('mouseout', function(e){
-				this.classList.remove("hover");
-			});
 		}
 	}
 }

@@ -1,16 +1,8 @@
-/*
-.placeholder{
-	border: 10px solid black;
-	width: 625px;
-	height: 625px;
-}
-*/
-
 .container{
 	display: grid;
 	grid-template-columns: repeat(16, 1fr);
-	width: 400px;
-	height: 400px;
+	width: 600px;
+	height: 600px;
 	border: 1px solid black;
 }
 
