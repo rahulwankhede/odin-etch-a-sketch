@@ -1,7 +1,7 @@
 const container = document.querySelector(".container");
 
 function drawGrid(size){
-	let div, id;
+	let div, id, code, newcode;
 	container.style.gridTemplateColumns = `repeat(${size}, 1fr)`
 	for(let i = 0; i < size; i++){
 		for(let j = 0; j < size; j++){
@@ -11,7 +11,14 @@ function drawGrid(size){
 			div.setAttribute("id", `${id}`);
 			container.appendChild(div);
 			div.addEventListener('mouseover', function(e){
-				this.classList.add("hover");
+				if (!this.style.backgroundColor){
+					this.style.backgroundColor = "rgb(225, 225, 225)";
+				}
+				else{
+					code = parseInt(this.style.backgroundColor.substring(4, 7));
+					newcode = code - 25;
+					this.style.backgroundColor = `rgb(${newcode}, ${newcode}, ${newcode})`;
+				}
 			});
 		}
 	}
@@ -26,7 +33,6 @@ function redrawGrid(e){
 	container.replaceChildren();
 	drawGrid(gridSize);
 }
-
 
 const button = document.querySelector('button');
 button.addEventListener('click', redrawGrid);
